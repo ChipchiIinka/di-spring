@@ -1,13 +1,12 @@
 package ru.egar.dispring.model;
 
-import jakarta.annotation.PostConstruct;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import ru.egar.dispring.di.annotation.InjectRandomInt;
 
-@Slf4j
+import javax.annotation.PostConstruct;
+
 @Data
 @Component
 @RequiredArgsConstructor
@@ -23,7 +22,7 @@ public class RobotClerk {
     private int repeat = 1;
 
     public void doWork() {
-        log.info("Count of repeats: {}", repeat);
+        System.out.println("Count of repeats: " + repeat);
         taskReceiver.addTask("Drink coffee", "Drank a lot of coffee");
         for (int i = 0; i < repeat; i++) {
             taskReceiver.getTasks()
@@ -35,6 +34,6 @@ public class RobotClerk {
     @PostConstruct
     public void init() {
         this.name = "Jack";
-        log.info("Hello, my name is {}", this.name);
+        System.out.println("Hello, my name is " + this.name);
     }
 }

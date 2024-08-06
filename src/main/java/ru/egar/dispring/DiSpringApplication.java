@@ -1,17 +1,17 @@
 package ru.egar.dispring;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import ru.egar.dispring.model.RobotClerk;
 
-@SpringBootApplication
+@ComponentScan
 @EnableAspectJAutoProxy
-@RequiredArgsConstructor
 public class DiSpringApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(DiSpringApplication.class, args);
-        ctx.close();
+        ApplicationContext context = new AnnotationConfigApplicationContext(DiSpringApplication.class);
+        RobotClerk robot = context.getBean(RobotClerk .class);
+        robot.doWork();
     }
 }

@@ -1,6 +1,6 @@
 package ru.egar.dispring.dao.impl;
 
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import ru.egar.dispring.dao.TaskRepository;
 import ru.egar.dispring.model.Task;
