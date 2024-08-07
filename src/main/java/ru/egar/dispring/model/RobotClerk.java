@@ -25,7 +25,7 @@ public class RobotClerk {
         System.out.println("Count of repeats: " + repeat);
         taskReceiver.addTask("Drink coffee", "Drank a lot of coffee");
         for (int i = 0; i < repeat; i++) {
-            taskReceiver.getTasks()
+            taskReceiver.getTasks().stream()
                     .map(taskExecutor::execute)
                     .forEach(reportSender::sendReport);
         }

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 public class BenchmarkAspect {
     @Around("@annotation(ru.egar.dispring.di.annotation.Benchmark)")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.printf("[[BENCHMARKED METHOD: %s\n", joinPoint.getSignature().getName());
+        System.out.printf("[[BENCHMARKED METHOD: %s%n", joinPoint.getSignature().getName());
         long start = System.nanoTime();
         Object result = joinPoint.proceed();
         long end = System.nanoTime();
-        System.out.printf("Execution time: %d]]]\n", end - start);
+        System.out.printf("Execution time: %d]]]%n", end - start);
         return result;
     }
 }

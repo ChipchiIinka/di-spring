@@ -9,7 +9,7 @@ public class TaskExecutorImpl implements TaskExecutor {
 
     @Override
     public String execute(Task task) {
-        System.out.printf("Get task: %s, details: %s\n", task.getText(), task.getComment());
+        System.out.printf("Get task: %s, details: %s%n", task.getText(), task.getComment());
 
         // Some logic
 

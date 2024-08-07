@@ -7,7 +7,7 @@ import ru.egar.dispring.di.annotation.Benchmark;
 import ru.egar.dispring.model.Task;
 import ru.egar.dispring.model.TaskReceiver;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -16,8 +16,8 @@ public class TaskReceiverImpl implements TaskReceiver {
 
     @Override
     @Benchmark
-    public Stream<Task> getTasks() {
-        return taskRepository.getTasks().stream();
+    public List<Task> getTasks() {
+        return taskRepository.getTasks();
     }
 
     @Override

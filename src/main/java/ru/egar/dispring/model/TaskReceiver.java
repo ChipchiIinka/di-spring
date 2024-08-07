@@ -1,8 +1,8 @@
 package ru.egar.dispring.model;
 
-import java.util.stream.Stream;
+import java.util.List;
 
 public interface TaskReceiver {
-    Stream<Task> getTasks();
+    List<Task> getTasks();
     void addTask(String name, String comment);
 }
